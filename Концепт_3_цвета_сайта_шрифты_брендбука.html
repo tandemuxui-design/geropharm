@@ -466,6 +466,14 @@ body.modal-open .brand, body.modal-open .btn-pill{background:rgba(255,255,255,.9
   .page-inner{padding:44px 20px 36px;}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+@media (min-width:821px) and (min-aspect-ratio:1/1){
+  .map-box{left:calc(50% - 125px)!important;width:min(calc(100vw - 290px), calc(100vh * 1.7739 * .92))!important;transform:translate(-50%,-50%)!important;}
+  .sea{-webkit-mask-image:radial-gradient(closest-side,#000 75%,transparent)!important;mask-image:radial-gradient(closest-side,#000 75%,transparent)!important;}
+  .legend{left:auto;right:24px;top:50%;bottom:auto;transform:translateY(-50%);flex-direction:column;align-items:stretch;gap:2px;width:220px;padding:10px;border-radius:20px;white-space:normal;}
+  .legend h2{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1E3E69;opacity:.7;margin:6px 10px 6px;}
+  .legend-item{width:100%;}
+  .legend hr{border:none;border-top:1px solid rgba(30,62,105,.15);height:0;width:auto;margin:6px 10px;}
+}
 </style>
 </head>
 <body>
