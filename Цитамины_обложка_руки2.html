@@ -203,10 +203,10 @@ function waves(dt, act, col){
   // активный уровень = порядковый номер шара в каскаде
   LEVELS.forEach((L,i)=>{
     const lvlNode=[2,0,1]; const on = act===lvlNode[i]?1:0;
-    lvlAmp[i]+= (on-lvlAmp[i])*Math.min(1,dt*2.2);
+    lvlAmp[i]+= (on-lvlAmp[i])*Math.min(1,dt*1.2);
     const c = NODES[lvlNode[i]].col;
     for(let k=0;k<NL;k++){
-      const ph=((hT*0.45)+k/NL)%1;           // волна расходится от тела
+      const ph=((hT*0.18)+k/NL)%1;           // волна расходится от тела
       const grow=1+ph*0.22;
       const rx=L.rx*grow, ry=L.ry*grow;
       const base=0.16+0.84*lvlAmp[i];
@@ -223,7 +223,7 @@ function waves(dt, act, col){
 const comet=document.getElementById('comet');
 const zones=[0,1,2].map(i=>document.getElementById('z'+i));
 let ang=-130, locked=null, target=null, resumeT=null, last=performance.now();
-const SPEED=34; // град/сек
+const SPEED=20; // град/сек
 function setActive(i){
   nodeEls.forEach((g,k)=>g.classList.toggle('active',k===i));
   zones.forEach((z,k)=>z.classList.toggle('on',k===i));
