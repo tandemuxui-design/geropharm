@@ -30,7 +30,7 @@
   .node.active .ripple:nth-of-type(3){animation-delay:1.6s;}
   @keyframes ripple{0%{transform:scale(.55);opacity:.75;}100%{transform:scale(2.1);opacity:0;}}
   .label text{fill:#2b2622;transition:opacity .6s;}
-  .label .name{font-size:22px;font-weight:700;paint-order:stroke;stroke:#efe9e1;stroke-width:5px;stroke-opacity:.75;stroke-linejoin:round;}
+  .label .name{font-size:22px;font-weight:700;}
   .label .role{font-size:17px;font-weight:400;}
   .node:not(.active) .label text{opacity:.55;}
   .node.active .label .role{opacity:.8;}
@@ -114,14 +114,6 @@ const NS='http://www.w3.org/2000/svg';
 const el=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;};
 const rad=a=>a*Math.PI/180;
 const pt=a=>[CX+R*Math.cos(rad(a)), CY+R*Math.sin(rad(a))];
-
-// стрелки по часовой между узлами
-const arrows=document.getElementById('arrows');
-for(const a of [6,112,256]){
-  const [x,y]=pt(a), t=[-Math.sin(rad(a)),Math.cos(rad(a))], n=[Math.cos(rad(a)),Math.sin(rad(a))];
-  const tip=[x+t[0]*8,y+t[1]*8], b1=[x-t[0]*6+n[0]*7,y-t[1]*6+n[1]*7], b2=[x-t[0]*6-n[0]*7,y-t[1]*6-n[1]*7];
-  el('path',{class:'arrow',d:`M${b1} L${tip} L${b2}`},arrows);
-}
 
 // узлы
 const nodesG=document.getElementById('nodes');
