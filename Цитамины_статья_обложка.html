@@ -466,5 +466,8 @@ const pr=document.querySelector('.rprog i');
 let lt=performance.now();function tick(t){const dt=Math.min(50,t-lt);lt=t;const H=half();if(!pause&&!drag&&!matchMedia('(prefers-reduced-motion:reduce)').matches){pos+=dt*0.03;if(pos>=H)pos-=H;rb.scrollLeft=pos}else{if(rb.scrollLeft>=H)rb.scrollLeft-=H;pos=rb.scrollLeft}const w=Math.min(1,rb.clientWidth/H);pr.style.width=w*100+'%';pr.style.marginLeft=(pos%H)/H*(1-w)*100+'%';requestAnimationFrame(tick)}requestAnimationFrame(tick);
 document.querySelector('.nx').addEventListener('click',()=>rb.scrollBy({left:300,behavior:'smooth'}));
 // видео по кнопке
+const MOB=matchMedia('(max-width:600px)').matches;
+document.querySelectorAll('video[autoplay]').forEach(v=>{v.muted=true;v.play().catch(()=>{})});
+if(MOB)document.querySelectorAll('video[data-btn]').forEach(v=>{v.parentNode.querySelector('.vbtn').remove();v.preload='auto';v.loop=true;v.muted=true;v.autoplay=true;v.play().catch(()=>{})});
 document.querySelectorAll('.vbtn').forEach(b=>{const v=b.parentNode.querySelector('video');v.autoplay=false;v.removeAttribute('autoplay');v.pause();v.addEventListener('play',()=>{if(!b.classList.contains('on'))v.pause()});b.addEventListener('click',()=>{b.classList.add('on');v.currentTime=0;v.play()});v.addEventListener('click',()=>{if(!v.paused){v.pause();b.classList.remove('on')}});v.addEventListener('ended',()=>{b.classList.remove('on');v.currentTime=0})});
 </script></body></html>
