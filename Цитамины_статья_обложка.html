@@ -343,7 +343,7 @@ const nodeEls=NODES.map((n,i)=>{
   if(n.shade) el('circle',{cx:x,cy:y,r:h,fill:`url(#sphere${K})`,'pointer-events':'none'},ball);
   im.style.animationDuration=(n.spd||40)+'s'; if(n.rev) im.style.animationDirection='reverse';
   const lab=el('g',{class:'label'},g);
-  const gap=h+12, above=n.side==='above', below=n.side==='below', vert=above||below;
+  const above=n.side==="above", gap=h+(C.GAP||12)+(above?8:0), below=n.side==='below', vert=above||below;
   const lx=vert?x:(n.side==='left'?x-gap:x+gap), anchor=vert?'middle':(n.side==='left'?'end':'start');
   el('text',{x:lx,y:above?y-gap+4:below?y+gap+6:y+5,'text-anchor':anchor},lab).textContent=n.name;
   return g;
