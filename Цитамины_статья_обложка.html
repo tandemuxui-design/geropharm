@@ -376,7 +376,7 @@ function frame(now){
   let pi=0,ni=0,dp=999,dn=999;
   NODES.forEach((n,i)=>{const a=norm(ang-n.ang), b=norm(n.ang-ang); if(a<dp){dp=a;pi=i;} if(b<dn){dn=b;ni=i;}});
   const c1=hx(NODES[pi].col), c2=hx(NODES[ni].col), tt=(dp+dn)?dp/(dp+dn):0;
-  const col=locked!==null?NODES[locked].col:'rgb('+c1.map((v,k)=>Math.round(v+(c2[k]-v)*tt)).join(',')+')';
+  const col=NODES[act!==null?act:pi].col;const _c='rgb('+c1.map((v,k)=>Math.round(v+(c2[k]-v)*tt)).join(',')+')';
   const a1=ang-70, steps=24; let d='';
   for(let s=0;s<=steps;s++){const a=a1+(ang-a1)*s/steps; const [x,y]=pt(a); d+=(s?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);}
   comet.setAttribute('d',d); comet.setAttribute('stroke',col); comet.setAttribute('stroke-opacity','.8');
