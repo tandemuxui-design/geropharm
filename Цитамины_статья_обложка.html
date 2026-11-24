@@ -107,7 +107,7 @@ h3{font-size:22px;line-height:28px;font-weight:700;color:var(--ink3)}
 .key .kc{position:relative;width:112px;height:112px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .key:hover .kc{transform:scale(1.05) rotate(-3deg)}
 .kt{position:relative;display:flex;flex-direction:column;gap:16px;flex:1;justify-content:space-between}
-.acts{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.rev{font-size:14px;line-height:20px;font-weight:500;color:var(--c);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c) 40%,transparent);text-underline-offset:4px;transition:text-decoration-color .25s,filter .25s}.rev:hover{text-decoration-color:currentColor;filter:brightness(.85)}
+.acts{display:flex;flex-direction:column;align-items:flex-start;gap:14px}.acts .rev{align-self:flex-end}.rev{font-size:14px;line-height:20px;font-weight:500;color:var(--c);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c) 40%,transparent);text-underline-offset:4px;transition:text-decoration-color .25s,filter .25s}.rev:hover{text-decoration-color:currentColor;filter:brightness(.85)}
 .kt p{font-size:16px;line-height:24px;color:var(--ink2)}.kt b{color:var(--c)}
 .more{align-self:flex-start;height:36px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px 8px 16px;border-radius:18px;background:var(--beige);font-size:14px;line-height:20px;font-weight:700;color:var(--ink2);transition:background .25s}
 .more span{font-weight:500;transition:transform .3s}
@@ -226,7 +226,7 @@ h3{font-size:22px;line-height:28px;font-weight:700;color:var(--ink3)}
  .tcard .tag{padding:28px 28px 12px}.tcard .title{padding:0 28px 28px;border-radius:0 0 24px 24px;margin-top:-8px}
  .meta{background:#fff;border-radius:24px;padding:12px 40px}
  .know{flex-direction:column;gap:24px}
- .keys{grid-template-columns:1fr}.key{flex-direction:row;align-items:center;min-height:0;padding:16px}.kt{gap:12px}
+ .keys{grid-template-columns:1fr}.key{flex-direction:row;align-items:center;min-height:0;padding:16px}.key .kt{align-self:stretch}.kt{gap:12px}
  .rc{flex-direction:column}.rc .ph{width:auto;aspect-ratio:358/223}
  .rc:nth-child(2) .ph{aspect-ratio:358/272}.rc:nth-child(3) .ph{aspect-ratio:358/216}
  .wrap>.tcard{order:1}.wrap>.know-s{order:2}.wrap>.toc{order:3}.wrap>#cascade{order:4}.wrap>.sec2:not(#why){order:5}.wrap>#why{order:6}.wrap>.keys-s{order:7;margin-top:-32px}.wrap>#how{order:8}.wrap>#course{order:9}.wrap>.col.txt{order:10}.wrap>#buy{order:11}.wrap>#faq{order:12}.wrap>.foot{order:13}
